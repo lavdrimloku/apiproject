@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Web</AssemblyName>
+    <UserSecretsId>56553741-032a-4198-af87-67462c06a41d</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <!--<PropertyGroup>
+    
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+    
+  </PropertyGroup>--> 
+
+  <PropertyGroup>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile> 
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Documents\**" />
+    <Compile Remove="GlobalExceptionHandler\**" />
+    <Compile Remove="Helpers\**" />
+    <Compile Remove="Pages\**" />
+    <Compile Remove="wwwroot\Documents\**" />
+    <Compile Remove="wwwroot\UploadImage\**" />
+    <Content Remove="Documents\**" />
+    <Content Remove="GlobalExceptionHandler\**" />
+    <Content Remove="Helpers\**" />
+    <Content Remove="Pages\**" />
+    <Content Remove="wwwroot\Documents\**" />
+    <Content Remove="wwwroot\UploadImage\**" />
+    <EmbeddedResource Remove="Documents\**" />
+    <EmbeddedResource Remove="GlobalExceptionHandler\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <EmbeddedResource Remove="wwwroot\Documents\**" />
+    <EmbeddedResource Remove="wwwroot\UploadImage\**" />
+    <None Remove="Documents\**" />
+    <None Remove="GlobalExceptionHandler\**" />
+    <None Remove="Helpers\**" />
+    <None Remove="Pages\**" />
+    <None Remove="wwwroot\Documents\**" />
+    <None Remove="wwwroot\UploadImage\**" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <Compile Remove="Controllers\AdministrationController.cs" />
+    <Compile Remove="Controllers\LocalizationController.cs" />
+    <Compile Remove="Controllers\RolesController.cs" />
+    <Compile Remove="Controllers\UserChangeHistoryController.cs" />
+    <Compile Remove="Mapper\MappingProfile - Old.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.43" />
+    <PackageReference Include="itext7" Version="7.2.2" />
+    <PackageReference Include="itext7.pdfhtml" Version="4.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
+    <PackageReference Include="TinyMCE" Version="5.7.1" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.0.7" />
+    <PackageReference Include="Z.Expressions.Eval" Version="4.0.91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Providers\" /> 
+    <!--<Folder Include="wwwroot\GlobalExceptionHandler\Log\" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content> 
+  </ItemGroup>
+
+</Project>

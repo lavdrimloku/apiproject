@@ -1,0 +1,51 @@
+﻿@page
+@model LoginModel
+
+@inject SignInManager<Data.AppUser> SignInManager
+@inject UserManager<Data.AppUser> UserManager
+
+@{
+
+    var sharedRes = (Dictionary<string, string>)ViewData["Shared"];
+    ViewData["Title"] = "Log in";
+}
+
+<div class="container">
+    <div class="row justify-content-center logini">
+
+        <div class="col-lg-4 col-md-6 col-sm-12 forma-gold">
+
+            <form id="account" method="post">
+                <div class="text-center">
+                    <i class="fa fa-user mb-4" style="color: #17a2b8;font-size: 100px"></i>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input asp-for="Input.userName" class="form-control" placeholder="Username />
+                        </div>
+                        <span asp-validation-for="Input.userName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+                        </div>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info"> Login  </button>
+                    </div>
+
+                </div>
+                <div>@Html.ValidationSummary("", new { @class = "text-danger" })</div>
+            </form>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
